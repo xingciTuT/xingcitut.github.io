@@ -44,7 +44,7 @@ async function getChatterData(slug: string) {
     .use(remarkParse)
     .use(remarkMath)
     .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeHighlight, { ignoreMissing: true })
+    .use(rehypeHighlight)
     .use(rehypeKatex)
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(content);
