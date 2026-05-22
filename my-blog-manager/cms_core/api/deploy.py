@@ -214,7 +214,7 @@ async def trigger_workflow():
                 print(f"[Deploy] Step1c: restored app/api")
 
         # Step 2: 清空 blog_path (保留 .git) 并复制 out/*
-        out_dir = os.path.join(PROJECT_ROOT, "out")
+        out_dir = os.path.join(blog_path, "dist")
         if not os.path.exists(out_dir):
             return {"success": False, "message": f"out/ 目录不存在: {out_dir}"}
         print(f"[Deploy] Step2: copying {out_dir} -> {blog_path}...")
